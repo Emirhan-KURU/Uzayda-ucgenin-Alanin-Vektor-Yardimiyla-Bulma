@@ -1,0 +1,44 @@
+// ucgenin alani
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    double vektor1[3],vektor2[3],vektor3[3];
+    double vektor12[3],vektor13[3];
+    double sonuc,sonucv[3],alan;
+    double i,j,k;
+
+
+    printf("Birinci vektoru giriniz:\t");
+    scanf("%lf%lf%lf",&vektor1[0],&vektor1[1],&vektor1[2]);
+
+    printf("ikinci vektoru giriniz:\t");
+    scanf("%lf%lf%lf",&vektor2[0],&vektor2[1],&vektor2[2]);
+
+    printf("ucuncu vektoru giriniz:\t");
+    scanf("%lf%lf%lf",&vektor3[0],&vektor3[1],&vektor3[2]);
+
+    vektor12[0] = vektor2[0]-vektor1[0];
+    vektor12[1] = vektor2[1]-vektor1[1];
+    vektor12[2] = vektor2[2]-vektor1[2];
+
+    vektor13[0] = vektor3[0]-vektor1[0];
+    vektor13[1] = vektor3[1]-vektor1[1];
+    vektor13[2] = vektor3[2]-vektor1[2];
+
+
+    i= vektor12[1]*vektor13[2] - vektor13[1]*vektor12[2];
+    j= vektor12[0]*vektor13[2] - vektor13[0]*vektor12[2];
+    k= vektor12[0]*vektor13[1] - vektor13[0]*vektor12[1];
+
+
+    sonuc = sqrt(i*i + j*j + k*k);
+    alan = sonuc/2;
+
+
+    printf("ucgenin alani = %lf",alan);
+
+    return 0;
+}
